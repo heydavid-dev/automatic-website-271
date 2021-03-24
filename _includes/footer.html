@@ -1,0 +1,41 @@
+<footer>
+	{% if site.your-name %}
+	<p class="footerText">Made by {% if site.your-link %}<a href="{{ site.your-link }}">{% endif %}{{ site.your-name }}{% if site.your-link %}</a>{% endif %}{% if site.your-city %} in {{ site.your-city }}{% endif %}</p>
+	{% endif %}
+	<div class="footerIcons">
+
+		{% if site.twitter-username %}
+			<a href="{{ site.twitter-username }}">
+				<span class="fa-stack fa-1x">
+					<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
+					<i class="socialIconTop fab fa-{{ site.twitter-icon }} fa-stack-1x"></i>
+				</span>
+			</a>
+		{% endif %}
+
+		{% if site.github-username %}
+			<a href="{{ site.github-username }}">
+				<span class="fa-stack fa-1x">
+					<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
+					<i class="socialIconTop fab fa-{{ site.github-icon }} fa-stack-1x"></i>
+				</span>
+			</a>
+		{% endif %}
+
+		{% if site.email-address %}
+			<a href="{{ site.email-address }}">
+				<span class="fa-stack fa-1x">
+					<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
+					<i class="socialIconTop fas fa-{{ site.envelope-icon }} fa-stack-1x"></i>
+				</span>
+			</a>
+		{% endif %}
+
+	</div>
+	<div class="footerLinks">
+		{% for page in site.pages %}
+			<a href="{{ page.url | relative_url }}" target="_self">{{ page.title }}</a>
+		{% endfor %}
+		<a href="{{ site.presskit-download-link }}">{{ site.presskit-title}}</a>
+	</div>
+</footer>
